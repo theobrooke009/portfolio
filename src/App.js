@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import { HiChevronDoubleDown } from 'react-icons/hi'
 import { DiJsBadge, DiCss3, DiHtml5, DiReact, DiNodejsSmall, DiPython, DiMongodb, DiSass, DiPostgresql, DiGithubBadge, DiGit } from 'react-icons/di'
-import { SiExpress, SiDjango, SiInsomnia, SiNpm, SiPowerbi } from 'react-icons/si'
+import { SiExpress, SiDjango, SiInsomnia, SiNpm, SiGmail, SiLinkedin } from 'react-icons/si'
 import { BsLink45Deg } from 'react-icons/bs'
-import { GiAbstract050, GiRunningShoe } from 'react-icons/gi'
+import { GiRunningShoe, GiGuitarBassHead } from 'react-icons/gi'
 import { IoBookSharp } from 'react-icons/io5'
+import {  IoLogoGameControllerB, IoLogoPlaystation } from 'react-icons/io'
+import {  MdMovie } from 'react-icons/md'
 import psn from './images/psn.png'
 import netflix from './images/netflix.png'
 import doom from './images/doom.png'
 import cards from './images/cards.png'
+MdMovie
 
 
 
@@ -67,9 +70,10 @@ function App() {
       </nav>
       <main>
         <section id="profile-section" className="profile-section">
+          <h1 className="section-header">about me</h1>
           <div id="about" className="columns about">
             <div id="profile" className="profile column is-one-third profile">
-              <h3>About Me</h3>
+
               <p className="bio">Former business analyst with a background in reporting and
 analytics. For the past ten years I have contributed to audit
 and regulatory reports in the professional services industry. I
@@ -87,10 +91,7 @@ immersed in it that I decided it was something I wanted to do
 for a career, which led me to enroll at GA.
               <br/>
               <br/>
-In my next role, I want to continue developing my knowledge
-of languages and frameworks (I want to revisit C++ and begin
-Ruby on Rails) as well as working through my ever-growing
-list of projects.</p>  
+              </p>  
             </div>
             <div className="skills column is-two-thirds">
               <h3>Skills</h3>
@@ -190,38 +191,37 @@ list of projects.</p>
           </div>
         </section>
         <hr />
-        <section>
-          <div className="profile">
-            <h3>Projects</h3>
+        <section className="projects-section">
+          <div >
+            <h1 className="section-header">projects</h1>
           </div>
           <div className="project-columns">
             <div className="wrapper-projects">
               <div className="project">
                 <img src={psn}/>
-                <h4>
-                  <GiAbstract050 className="p-icon"/>Playstation Store Clone
-                </h4>
+                <div className="p-title">
+                  <IoLogoPlaystation className="p-icon"/>
+                  <h4>Playstation Store Clone</h4>
+                  
+                </div>
+                <p>Group Project | 9 Days</p>
                 <div>
                   <DiReact className="dev-project"/>
                   <DiPython className="dev-project"/>
                   <SiDjango className="dev-project"/>
                   <DiHtml5 className="dev-project"/>
-              
                 </div>
                 <p className="description">
-              This was a solo project built over 7 days. A full stack
-RESTful app with CRUD functionality and built using
-React.js and Django. As this was my final project, I
-decided to consolidate everything I’d learned up to
-that point into something familiar. I built a clone of
-the PlayStation Store, which allowed users to both
-‘purchase’ (essentially like) and add their own games
-as well as leave reviews.
+                My final GA project and a faithful recreation of the React app I've (probably) used the most, and allows users to create, purchase and review games. 
+                  <br/>
+                  <br/>
+                Built with Django and Python for the back-end alongside React for the front, this project was absout consolidating everything I'd learned up to that point.
                 </p>
                 <div className="links">
                   <DiGithubBadge className="dev-project"/>
                   <BsLink45Deg className="dev-project"/>
                 </div>
+
 
               
               </div>
@@ -229,22 +229,21 @@ as well as leave reviews.
                 <div>
                   <img src={cards}/>
                 </div>
-                <h4>
-                  <GiAbstract050 className="p-icon"/> Choose Your Hero
-                </h4>
+                <div className="p-title">
+                  <IoLogoGameControllerB className="p-icon"/> 
+                  <h4>Choose Your Hero</h4>
+                </div>
+                <p>Pair Coded Project | 2 Days</p>
                 <div>
                   <DiReact className="dev-project"/>
                   <DiHtml5 className="dev-project"/>
                   <DiCss3 className="dev-project"/>
                 </div>
                 <p className="description">
-              This was a pair programming project built over 2
-days, using React.js, CSS and consuming a public API.
-We built a Magic style card game which selects 2
-random superheroes from the API and asks the player
-which stat (strength, speed etc.) they think is higher.
-This was a great exercise in not only React.js but also
-in communication and working to a tight deadline.
+              A Magic The Gathering style card game, designed to settle the classic schoolyard argument of who would win in a fight between Iron Man and The Hulk
+                  <br/>
+                  <br/>
+              This app consumes an external API of superheros, before pulling out two random ones and asking the player to guess who is stronger/faster/smarter etc. 
                 </p>
                 <div className="links">
                   <DiGithubBadge className="dev-project"/>
@@ -257,9 +256,11 @@ in communication and working to a tight deadline.
                 <div>
                   <img src={netflix}/>
                 </div>
-                <h4>
-                  <GiAbstract050 className="p-icon"/> Movie Marathon Generator
-                </h4>
+                <div className="p-title">
+                  <MdMovie className="p-icon"/> 
+                  <h4>Movie Marathon Generator</h4>
+                </div>
+                <p>Group Project | 9 Days</p>
                 <div>
                   <DiReact className="dev-project"/>
                   <DiNodejsSmall className="dev-project"/>
@@ -269,7 +270,11 @@ in communication and working to a tight deadline.
                   <DiCss3 className="dev-project"/>
                 </div>
                 <p className="description">
-              This was a group project built over 9 days with 2 other people. A full stack RESTful app with CRUD functionality and built using React.js, MongoDB and Express. We built an app which would allow users to plan movie nights, by creating and saving movie marathons. This was an exercise in full stack development as well as teamwork and delegation. Responsibilities included building the complete back end in MongoDB as well as the index page and some styling in the front end.
+
+                  A Netflix style app which helps you to decide what to watch based on how much time you have available, as well as helping you plan your movie nights with friends.
+                  <br/>
+                  <br/>
+                  My role in this project was using Express to create all back end functionality as well as working on the recommended and top ten side bars using a React frontend.
                 </p>
                 <div className="links">
                   <DiGithubBadge className="dev-project"/>
@@ -281,22 +286,22 @@ in communication and working to a tight deadline.
                 <div>
                   <img src={doom}/>
                 </div>
-                <h4>
-                  <GiAbstract050 className="p-icon"/> Doom Demastered
-                </h4>
+                <div className="p-title">
+                  <h4>
+                    <IoLogoGameControllerB className="p-icon"/> Doom Demastered
+                  </h4>
+                </div>
+                <p>Solo Project | 7 Days</p>
                 <div>
                   <DiJsBadge className="dev-project"/>
                   <DiHtml5 className="dev-project"/>
                   <DiCss3 className="dev-project"/>
                 </div>
                 <p className="description">
-              This was a solo project built over 7 days using
-JavaScript, CSS and HTML. This was the first real test
-and consolidation of what I had learned up to this
-point. It greatly solidified my knowledge of JavaScript
-as well as how to solve problems. I themed my project
-around classic FPS game Doom, as I used to make
-levels for it in the early 2000’s.
+              A Space Invaders clone themed around iconic 90S FPS Doom. To win, you shoot at the advancing army of Cacodemons whilst dodging their fireballs.
+                  <br/>
+                  <br/> 
+              There are 2 difficulty modes and a score counter alongside authentic Doom spites, animations and sound effects. This was my first ever project built in JavaScript.
                 </p>
                 <div className="links">
                   <DiGithubBadge className="dev-project"/>
@@ -308,25 +313,26 @@ levels for it in the early 2000’s.
         </section>
         <hr />
         <section id="interests-section" className="interests-section">
+          <h1 className="section-header">interests</h1>
+          <p className="blurb">When I'm not working i love to do the following:</p>
           <div className="interests columns">
             <div className="column interest-div is-one-third">
               <GiRunningShoe className="hobby-icon"/>
             </div>
             <div className="column is-two-thirds">
-              <h3>Running</h3>
-              <p className="bio">I love marathon/distance running and have been doing it for 5 years. I believe that running is the best base from which to understand struggle, challenge and resilience. It’s as much psychological as it is physical, and is a series of 26 shifting challenges wrapped up in a seemingly insurmountable one. The next big race I want to do is the Midnight Sun Marathon, which takes place in Norway at a time of year where the sun never goes below the horizon.</p>  
+              <h3 className="int-title" >Running</h3>
+              <p className="int-desc">I love marathon/distance running and have been doing it for 5 years. I believe that running is the best base from which to understand struggle, challenge and resilience. It’s as much psychological as it is physical, and is a series of 26 shifting challenges wrapped up in a seemingly insurmountable one. The next big race I want to do is the Midnight Sun Marathon, which takes place in Norway at a time of year where the sun never goes below the horizon.</p>  
             </div>
           </div>
 
           <div className="interests columns">
             <div className="column is-two-thirds">
-              <h3 className="bio-two">Reading</h3>
+              <h3 className="bio-two int-title">Reading</h3>
               <p className="bio-two">I’ve been a big reader since childhood (I come from a family of big readers) and even now as a busy adult, I have a longstanding goal to read 15 books a year. I love sci fi (my decision to become a programmer was semi inspired by reading William Gibson novels) and my favourite novel falls somewhere between Frankenstein, Neuromancer and Moby Dick. I’m also pretty sure I’ve read every Terry Pratchett novel at least twice.</p>
               <div className="columns">
                 <div className="column is-half">
                   <div>
-                    <h3 className="bio-two book-info">My 2021 read list so far:</h3>
-                    <p className="bio-two book-info"><span className="book-title">No One Writes Back</span> - Eun-Jin Jang, <span className="book-title">Cat's Cradle</span> - Kurt Vonnegut, <span className="book-title">The Question Mark</span> - Muriel Jaeger, <span className="book-title">Tentacles Longer Than Night</span> - Eugene Thacker, <span className="book-title">The City and the Stars</span> - Arthur C. Clarke, <span className="book-title">Redemption Ark</span> - Alastair Reynolds, <span className="book-title">Can The Market Speak?</span> - Campbell Jones, <span className="book-title">The Three-Body Problem</span> - Liu Cixin </p>
+
                   </div>
                 </div>
                 <div className="column is-half currently-reading">
@@ -341,10 +347,41 @@ levels for it in the early 2000’s.
             <div className="column interest-two-div is-one-third">
               <IoBookSharp  className="hobby-icon"/>
             </div>
+            
+          </div>
+          <div className="interests columns">
+            <div className="column interest-div is-one-third">
+              <GiGuitarBassHead  className="hobby-icon"/>
+            </div>
+            <div className="column is-two-thirds">
+              <h3 className="int-title">Music</h3>
+              <p className="int-desc">I play bass <a src={'https://reprisal.bandcamp.com/'}>here</a> and have since 2013. Music was the first thing I took seriously as a teenager and I still love playing to this day. After countless shows and tours, I'm an expert in service station sandwiches, sleeping in strange, uncomfortable places and permanent bilateral tinnitus, but I wouldn't change any of it. It also gave me the <a>single greatest photo of me ever,</a> which is pretty cool.</p>  
+            </div>
           </div>
   
         </section>
         <hr />
+        <section className="contact-section">
+          <div className="contact">
+            <h1>contact</h1>
+            <div className="p-title">
+              <SiGmail className="p-icon"/> 
+              <h4>theobrooke009@gmail.com</h4>
+            </div>
+            <div>
+              <SiLinkedin className="p-icon"/> 
+              <a href="https://www.linkedin.com/in/theo-brooke-408183157/">linkedin/in/theo-brooke</a>
+            </div>
+            <div>
+              <DiGithubBadge className="p-icon"/> 
+              <a href="https://github.com/theobrooke009/">github.com/theobrooke009</a>
+            </div>
+
+            
+            
+
+          </div>
+        </section>
       </main>
     </body>
   )
